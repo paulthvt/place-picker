@@ -1,4 +1,4 @@
- [![](https://jitpack.io/v/suchoX/PlacePicker.svg)](https://jitpack.io/#pault1337/place-picker)
+[![](https://jitpack.io/v/pault1337/place-picker.svg)](https://jitpack.io/#pault1337/place-picker)
 
 # PlacePicker
 Place Picker for Google Maps has been deprecated in Android and we are told to move to paid APIs. Autocomplete, Nearby and Places photos APIs are chargeable after a number of loads. [Check Pricing here](https://cloud.google.com/maps-platform/pricing/sheet/)
