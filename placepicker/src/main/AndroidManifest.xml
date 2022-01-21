@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.thevenot.placepicker">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application android:supportsRtl="true">
+        <activity
+            android:name=".PlacePickerActivity"
+            android:exported="false"
+            android:label="@string/place_picker_title_activity_place_picker" />
+    </application>
+
+</manifest>

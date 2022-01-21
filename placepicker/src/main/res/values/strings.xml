@@ -1,0 +1,8 @@
+<resources>
+  <string name="place_picker_app_name">PlacePicker</string>
+  <string name="place_picker_title_activity_place_picker">Map</string>
+
+  <string name="place_picker_no_address">Not a valid Address</string>
+  <string name="place_picker_coordinates">%1$s, %2$s</string>
+
+</resources>

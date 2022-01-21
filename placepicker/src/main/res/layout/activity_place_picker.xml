@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/place_picker_layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/search_bar_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/white"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <fragment
+            android:id="@+id/place_autocomplete"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </androidx.cardview.widget.CardView>
+
+    <fragment
+      android:id="@+id/map"
+      android:name="com.google.android.gms.maps.SupportMapFragment"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:context=".PlacePickerActivity"
+      />
+
+
+  <ImageView
+      android:id="@+id/marker_shadow_image_view"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:adjustViewBounds="true"
+      android:elevation="1dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/marker_image_view"
+      app:srcCompat="@drawable/marker_shadow"
+      />
+
+  <ImageView
+      android:id="@+id/marker_image_view"
+      android:layout_width="wrap_content"
+      android:layout_height="47dp"
+      android:adjustViewBounds="true"
+      android:layout_marginBottom="47dp"
+      android:elevation="2dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_map_marker"
+      />
+
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/my_location_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="10dp"
+      android:layout_marginEnd="18dp"
+      android:layout_marginRight="18dp"
+      android:scaleType="center"
+      app:backgroundTint="@color/colorPrimary"
+      app:elevation="3dp"
+      app:fabSize="normal"
+      app:layout_constraintBottom_toTopOf="@+id/place_chosen_button"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:srcCompat="@drawable/ic_my_location"
+      app:tint="@color/white" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/place_chosen_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="18dp"
+      android:layout_marginEnd="18dp"
+      android:layout_marginRight="18dp"
+      android:scaleType="center"
+      app:backgroundTint="@color/colorPrimary"
+      app:elevation="3dp"
+      app:fabSize="normal"
+      app:layout_constraintBottom_toTopOf="@+id/info_layout"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:srcCompat="@drawable/ic_check"
+      app:tint="@color/white" />
+
+  <FrameLayout
+      android:id="@+id/info_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        >
+      <TextView
+          android:id="@+id/text_view_place_name"
+          style="?attr/textAppearanceHeadline6"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ellipsize="end"
+          android:maxLines="1"
+          tools:text="Normal House"
+          />
+
+      <TextView
+          android:id="@+id/text_view_place_address"
+          style="?attr/textAppearanceSubtitle1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ellipsize="end"
+          android:maxLines="1"
+          android:textColor="@color/colorPrimary"
+          android:textStyle="normal"
+          tools:text="Empire State Building"
+          />
+
+
+      <TextView
+          android:id="@+id/text_view_place_coordinates"
+          style="?attr/textAppearanceBody1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ellipsize="end"
+          android:maxLines="1"
+          android:textColor="@color/textGrey"
+          android:textStyle="normal"
+          tools:text="-1.0, -1.0"
+          />
+    </LinearLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_bar_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:trackCornerRadius="@dimen/mtrl_progress_indicator_full_rounded_corner_radius"
+        />
+
+  </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

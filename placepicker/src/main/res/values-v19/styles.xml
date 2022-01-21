@@ -1,0 +1,12 @@
+<resources>
+
+  <style name="PlacePickerTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorOnPrimary">@color/colorOnPrimary</item>
+    <item name="colorSecondary">@color/colorSecondary</item>
+    <item name="colorOnSecondary">@color/colorOnSecondary</item>
+    <item name="android:windowTranslucentStatus">true</item>
+  </style>
+</resources>
