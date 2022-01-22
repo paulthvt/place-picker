@@ -76,7 +76,7 @@ Note: `PlacePickerActivity` uses the default theme of your app. If you want to c
 ```xml
 <activity
     android:name="com.thevenot.placepicker.PlacePickerActivity"
-    android:theme="@style/PlacePickerTheme"/> //Included FullScreen Day-Night Theme
+    android:theme="@style/PlacePickerTheme"/> <!-- Included FullScreen Day-Night Theme -->
 ```
 
 ## Changelog

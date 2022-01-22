@@ -113,13 +113,13 @@ class PlacePickerActivity : AppCompatActivity(), OnMapReadyCallback {
             if (onlyCoordinates) {
                 sendOnlyCoordinates()
             } else {
-                if (addresses != null) {
-                    val addressData = AddressData(latitude, longitude, addresses)
+                addresses?.let {
+                    val addressData = AddressData(latitude, longitude, it)
                     val returnIntent = Intent()
                     returnIntent.putExtra(Constants.ADDRESS_INTENT, addressData)
                     setResult(RESULT_OK, returnIntent)
                     finish()
-                } else {
+                } ?: run {
                     if (!addressRequired) {
                         sendOnlyCoordinates()
                     } else {
@@ -228,7 +228,7 @@ class PlacePickerActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun sendOnlyCoordinates() {
-        val addressData = AddressData(latitude, longitude, null)
+        val addressData = AddressData(latitude, longitude, listOf())
         val returnIntent = Intent()
         returnIntent.putExtra(Constants.ADDRESS_INTENT, addressData)
         setResult(RESULT_OK, returnIntent)
