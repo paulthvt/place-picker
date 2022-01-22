@@ -81,6 +81,9 @@ Note: `PlacePickerActivity` uses the default theme of your app. If you want to c
 
 ## Changelog
 
+### [1.0.1]
+- Make address non nullable on return data object
+
 ### [1.0.0]
 - First version
 
