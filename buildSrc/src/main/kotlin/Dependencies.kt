@@ -1,30 +1,32 @@
 object BuildPlugins {
     object Versions {
         const val gradleVersion = "7.0.4"
-        const val kotlinVersion = "1.6.0"
+        const val kotlinVersion = "1.6.10"
     }
 
     const val gradlePlugin = "com.android.tools.build:gradle:${Versions.gradleVersion}"
     const val kotlinGradlePlugin =
         "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
+    const val secretGradlePlugin = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.0"
 
     const val androidApplication = "com.android.application"
     const val androidLibrary = "com.android.library"
     const val kotlinAndroid = "kotlin-android"
     const val kotlinParcelize = "kotlin-parcelize"
     const val mavenPublish = "maven-publish"
+    const val secretGradle = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin"
 }
 
 object Libs {
     object Material {
-        const val material = "com.google.android.material:material:1.4.0"
+        const val material = "com.google.android.material:material:1.5.0"
     }
 
     object AndroidX {
-        const val appcompat = "androidx.appcompat:appcompat:1.4.0"
+        const val appcompat = "androidx.appcompat:appcompat:1.4.1"
         const val coreKtx = "androidx.core:core-ktx:1.7.0"
         const val fragmentKtx = "androidx.fragment:fragment-ktx:1.4.0"
-        const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.2"
+        const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.3"
     }
 
     object PlayServices {

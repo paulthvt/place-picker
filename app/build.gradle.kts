@@ -1,6 +1,7 @@
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.secretGradle)
 }
 
 android {
