@@ -1,6 +1,7 @@
 package com.thevenot.placepicker
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Parcelable
 import androidx.annotation.ColorRes
@@ -11,8 +12,6 @@ import kotlinx.parcelize.Parcelize
 class PlacePicker {
 
     class IntentBuilder {
-
-        private lateinit var activity: Activity
         private var showLatLong: Boolean = false
         private var latitude: Double = Constants.DEFAULT_LATITUDE
         private var longitude: Double = Constants.DEFAULT_LONGITUDE
@@ -96,9 +95,8 @@ class PlacePicker {
         fun setMyLocationButtonPosition(position: Position) =
             apply { this.myLocationPosition = position }
 
-        fun build(activity: Activity): Intent {
-            this.activity = activity
-            val intent = Intent(activity, PlacePickerActivity::class.java)
+        fun build(context: Context): Intent {
+            val intent = Intent(context, PlacePickerActivity::class.java)
             intent.putExtra(Constants.ADDRESS_REQUIRED_INTENT, addressRequired)
             intent.putExtra(Constants.SHOW_LAT_LONG_INTENT, showLatLong)
             intent.putExtra(Constants.INITIAL_LATITUDE_INTENT, latitude)
