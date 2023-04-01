@@ -40,6 +40,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    secrets {
+        defaultPropertiesFileName = "local.defaults.properties"
+    }
 }
 
 dependencies {

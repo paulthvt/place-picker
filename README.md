@@ -26,7 +26,7 @@ allprojects {
 
 ```
 dependencies {
-  implementation 'com.github.pault1337:place-picker:1.0.2'
+  implementation 'com.github.pault1337:place-picker:1.0.3'
 }
 ```
 PlacePicker Uses **AndroidX** artifacts, thus to use it without issues, make sure your application has been migrated to AndroidX as well. If you havent done it already, [Here's How](https://developer.android.com/jetpack/androidx/migrate)
@@ -81,7 +81,7 @@ Note: `PlacePickerActivity` uses the default theme of your app. If you want to c
 
 ## Changelog
 
-### [1.0.2]
+### [1.0.3]
 - Do not require activity for IntentBuilder
 
 ### [1.0.1]
